@@ -1,5 +1,7 @@
 # Sample template for making a Penn-branded poster
 
+Example output [here](http://pennecon.github.io/penn-poster/poster.pdf).
+
 1. `beamerposter.sty` contains the `beamerposter` package, copyright 2007 by Philippe Dreuw.
 2. `beamerthemeconfposter.sty` is a beamer theme with Penn colors and some modifications by me.
 3. `penn.eps` is a print-quality Penn logo.
