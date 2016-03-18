@@ -1,0 +1,122 @@
+\ProvidesPackage{beamerthemeconfposter}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,backgrounds}
+\RequirePackage{lmodern}
+\usepackage{exscale}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath,amssymb}
+\newcommand{\makeruleinbox}{{\usebeamercolor[bg]{block alerted title}\centering\hspace*{-0.7cm}\rule{\inboxrule}{0.5cm}}}
+\usepackage{ragged2e}
+
+\makeatletter
+\def\@listi{\leftmargin\leftmarginii
+\topsep 1ex
+\parsep 0\p@ \@plus\p@
+\itemsep 6pt}
+\makeatother
+
+\usecaptiontemplate{\small\structure{\insertcaptionname~\insertcaptionnumber: }\insertcaption} % A fix for figure numbering
+
+% Colors
+\definecolor{pennBlue}{HTML}{00144d}
+\definecolor{pennLightBlue}{HTML}{045ea7}
+\definecolor{pennRed}{HTML}{95001a}
+
+% set colors for blocks
+\setbeamercolor{block title}{fg=black, bg=white}
+\setbeamercolor{block body}{fg=black, bg=white}
+
+% set some beamer theme options
+\setbeamertemplate{title page}[default][colsep=-4bp]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[width=0.0]
+\beamertemplatenavigationsymbolsempty
+
+% set bibliography style
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+\setbeamercolor{bibliography entry author}{fg=black,bg=white}
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+
+% define some length variables that are used by the template
+\newlength{\inboxwd}
+\newlength{\iinboxwd}
+\newlength{\inboxrule}
+\makeatletter
+\makeatother
+
+% Set the alert color
+\setbeamercolor{alerted text}{fg=pennRed}
+
+%==============================================================================
+% build the poster title
+%==============================================================================
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{\linewidth}
+    \vskip2cm
+    \centering
+    \textsf{\usebeamercolor{title in headline}{\color{black}\Huge{\textbf{\inserttitle}}\\[0.5ex]}}
+    \textsf{\usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}}
+   \end{column}
+  \end{columns}
+  \vskip-1in
+}
+
+% Block definition
+\setbeamertemplate{block begin}
+{
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
+    \vskip-0.25cm
+    \huge\textsf{\insertblocktitle}
+  \end{beamercolorbox}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[pennBlue]
+    (0,0) rectangle (\textwidth,0.3cm);
+  \end{tikzpicture}
+  \vspace{1in}
+  {\parskip0pt\par}
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
+  \vskip-0.5cm
+  \begin{beamercolorbox}[colsep*=0ex,vmode]{block body}
+  \justifying \large
+}
+
+\setbeamertemplate{block end}
+{
+  \end{beamercolorbox}
+  \vskip\smallskipamount
+}
+
+% Alert block definition (with frame)
+\setbeamertemplate{block alerted begin}
+{
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[center]{block alerted title}
+    \vskip0.02cm
+    \large\insertblocktitle
+    \vskip0.4cm
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[center]{block alerted title}
+  \setlength{\inboxwd}{\linewidth}
+  \addtolength{\inboxwd}{-1cm}
+  \begin{beamercolorbox}[center]{block alerted body}
+  \begin{center}
+  \begin{minipage}{\inboxwd}
+  \vskip1cm
+  \justifying
+}
+
+\setbeamertemplate{block alerted end}
+{
+  \end{minipage}
+  \end{center}
+  \end{beamercolorbox}
+  \end{beamercolorbox}
+  \vskip\smallskipamount
+}

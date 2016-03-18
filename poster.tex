@@ -1,0 +1,126 @@
+\documentclass[12pt, final]{beamer}
+
+\usepackage[scale=1.24]{beamerposter}
+
+% Packages to include the Penn logo
+\usepackage{epstopdf}
+\usepackage[absolute,overlay]{textpos}
+
+\usetheme{confposter}
+
+% Adjust these lengths if you want, e.g., a 4 column poster
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in} % A0 width: 46.8in
+\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.28\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.57\paperwidth} % Width of two columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+
+% Required for including images
+\usepackage{graphicx}
+
+% Top and bottom rules for tables
+\usepackage{booktabs}
+
+\usetikzlibrary{decorations.markings}
+
+\title{Theory and evidence: Theory and evidence}
+\author{Marge Innolkost}
+
+\begin{document}
+
+% A two column poster, where one of the columns is split into two more columns
+\begin{frame}[t]
+  \begin{columns}[t]
+    \begin{column}{\sepwid}\end{column} % Spacing column
+    \begin{column}{\onecolwid}
+      \begin{block}{Summary}
+        \begin{itemize}
+          \item Lorem ipsum \alert{dolor} sit amet, consectetur adipiscing,
+          \item sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          \item Ut enim ad minim veniam,
+          \item quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          \item Duis aute irure dolor in reprehenderit
+          \item in voluptate velit \alert{esse cillum dolore} eu fugiat nulla pariatur.
+          \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          \item officia deserunt mollit anim id est laborum.
+        \end{itemize}
+      \end{block}
+      \begin{block}{Model}
+        \begin{itemize}
+          \item Lorem ipsum \alert{dolor} sit amet, consectetur adipiscing,
+          \item sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          \item Ut enim ad minim veniam,
+          \item quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          \item $$x = \int_0^1 t^2 \,dF(t).$$
+          \item in voluptate velit \alert{esse cillum dolore} eu fugiat nulla pariatur.
+          \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          \item officia deserunt mollit anim id est laborum.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{\sepwid}\end{column}
+    \begin{column}{\twocolwid}
+      \begin{block}{Data}
+        \begin{itemize}
+          \item Lorem ipsum \alert{dolor} sit amet, consectetur adipiscing,
+          \item sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          \item Ut enim ad minim veniam,
+          \item quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          \item $$x = \int_0^1 t^2 \,dF(t).$$
+          \item in voluptate velit \alert{esse cillum dolore} eu fugiat nulla pariatur.
+          \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          \item officia deserunt mollit anim id est laborum.
+        \end{itemize}
+        \vskip1in
+        \begin{figure}
+          \begin{tikzpicture}[scale=3.75]
+            \draw[line width = 0.1in] (0, 4) -- (0, 0) -- (16, 0) -- (16, 4) -- (0, 4);
+            \node at (8, 2) {Figure.};
+          \end{tikzpicture}
+          \label{fig:pic}
+          \caption{A caption goes here.}
+        \end{figure}
+      \end{block}
+
+      \begin{columns}[t]
+        \begin{column}{\onecolwid}
+          \begin{block}{Theory}
+            \begin{itemize}
+              \item Lorem ipsum \alert{dolor} sit amet, consectetur adipiscing,
+              \item sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              \item Ut enim ad minim veniam,
+              \item quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              \item $$x = \int_0^1 t^2 \,dF(t).$$
+              \item in voluptate velit \alert{esse cillum dolore} eu fugiat nulla pariatur.
+            \end{itemize}
+          \end{block}
+        \end{column}
+        \begin{column}{\onecolwid}
+          \begin{block}{Evidence}
+            \begin{itemize}
+              \item Ut enim ad minim veniam,
+              \item quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              \item $$x = \int_0^1 t^2 \,dF(t).$$
+              \item in voluptate velit \alert{esse cillum dolore} eu fugiat nulla pariatur.
+              \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              \item officia deserunt mollit anim id est laborum.
+            \end{itemize}
+          \end{block}
+        \end{column}
+      \end{columns}
+    \end{column}
+  \end{columns}
+
+  % The penn logo
+  \begin{textblock}{10}(1.75, 15)
+   \includegraphics[scale=2]{penn}
+  \end{textblock}
+
+\end{frame}
+
+\end{document}
