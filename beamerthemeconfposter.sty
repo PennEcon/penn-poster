@@ -32,19 +32,22 @@
 % Poster title
 \setbeamertemplate{headline}{
  \leavevmode
- % Comment this out to remove header
+ % Comment out different styles for different headers
+ \vskip-0.5in
  \begin{tikzpicture}
-   \fill[pennBlue] (0, 0) rectangle (\textwidth, 10);
-   \fill[pennRed] (0, 0) -- (0.1\textwidth, 10) -- (0, 10) -- (0, 0);
-   \fill[pennRed] (0.9\textwidth, 10) -- (\textwidth, 10) -- (\textwidth, 0) -- cycle;
+   \fill[pennBlue] (0, -6) -- (16, 10) -- (0, 10) -- (0, 0);
+   \fill[pennRed] (0, 0) -- (10, 10) -- (0, 10) -- (0, 0);
+   \fill[white] (0+3.25, -3+3.25) circle (1);
+   \fill[white] (0+6.5, -3+6.5) circle (1);
+   \fill[white] (0+9.75, -3+9.75) circle (1);
  \end{tikzpicture}
- \vskip-3.6in
+ \vskip-5.5in
   \begin{columns}
    \begin{column}{\linewidth}
     \vskip2cm
     \centering
-    \textsf{\usebeamercolor{title in headline}{\color{white}\Huge{\textbf{\inserttitle}}\\[0.5ex]}}
-    \textsf{\usebeamercolor{author in headline}{\color{white}\Large{\insertauthor}\\[1ex]}}
+    \textsf{\usebeamercolor{title in headline}{\color{black}\Huge{\textbf{\inserttitle}}\\[0.5ex]}}
+    \textsf{\usebeamercolor{author in headline}{\color{black}\Large{\insertauthor}\\[1ex]}}
    \end{column}
   \end{columns}
   \vskip0.7in
@@ -69,7 +72,7 @@
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
   \vskip-0.5cm
   \begin{beamercolorbox}[colsep*=0ex,vmode]{block body}
-  \justifying \large
+  \justifying
 }
 
 \setbeamertemplate{block end}
