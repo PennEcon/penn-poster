@@ -1,6 +1,7 @@
 \ProvidesPackage{beamerthemeconfposter}
 \RequirePackage{tikz}
 \usetikzlibrary{arrows,backgrounds}
+\usetikzlibrary{calc}
 \RequirePackage{lmodern}
 \usepackage{exscale}
 \RequirePackage{textcomp}
@@ -23,8 +24,8 @@
 \definecolor{pennRed}{HTML}{95001a}
 
 % Set colors for blocks
-\setbeamercolor{block title}{fg=black, bg=white}
-\setbeamercolor{block body}{fg=black, bg=white}
+\setbeamercolor{block title}{fg=black}
+\setbeamercolor{block body}{fg=black}
 
 % Set the alert color
 \setbeamercolor{alerted text}{fg=pennRed}
@@ -35,11 +36,20 @@
  % Comment out different styles for different headers
  \vskip-0.5in
  \begin{tikzpicture}
-   \fill[pennBlue] (0, -6) -- (16, 10) -- (0, 10) -- (0, 0);
-   \fill[pennRed] (0, 0) -- (10, 10) -- (0, 10) -- (0, 0);
-   \fill[white] (0+3.25, -3+3.25) circle (1);
-   \fill[white] (0+6.5, -3+6.5) circle (1);
-   \fill[white] (0+9.75, -3+9.75) circle (1);
+   \fill[pennBlue] (0, 0) -- (0.13\textwidth, 0) -- (0, -0.13\textwidth) -- (0, 0);
+   \fill[pennRed] (0, 0) -- (0.08\textwidth, 0) -- (0, -0.08\textwidth) -- (0, 0);
+   \coordinate (a) at (0, -0.105\textwidth);
+   \coordinate (b) at (0.105\textwidth, 0);
+   \fill[white] ($(a)!0.25!(b)$) circle (1);
+   \fill[white] ($(a)!0.5!(b)$) circle (1);
+   \fill[white] ($(a)!0.75!(b)$) circle (1);
+   \fill[pennBlue] (\textwidth, 0) -- (\textwidth-0.13\textwidth, 0) -- (\textwidth, -0.13\textwidth) -- (\textwidth, 0);
+   \fill[pennRed] (\textwidth, 0) -- (\textwidth-0.08\textwidth, 0) -- (\textwidth, -0.08\textwidth) -- (\textwidth, 0);
+   \coordinate (a) at (\textwidth, -0.105\textwidth);
+   \coordinate (b) at (\textwidth-0.105\textwidth, 0);
+   \fill[white] ($(a)!0.25!(b)$) circle (1);
+   \fill[white] ($(a)!0.5!(b)$) circle (1);
+   \fill[white] ($(a)!0.75!(b)$) circle (1);
  \end{tikzpicture}
  \vskip-5.5in
   \begin{columns}
@@ -50,7 +60,7 @@
     \textsf{\usebeamercolor{author in headline}{\color{black}\Large{\insertauthor}\\[1ex]}}
    \end{column}
   \end{columns}
-  \vskip0.7in
+  \vskip0in
 }
 
 % Block definition
